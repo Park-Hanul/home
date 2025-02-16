@@ -1,0 +1,78 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.join{
+    .joinStep{
+        width: 1280px; margin: 0 auto 50px; border-bottom: 2px solid #d9d9d9;
+
+        ul{
+            display: flex; justify-content: center; align-items: center;
+            
+            li{
+                width: 20%;
+
+                .num{
+                    display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; margin: 0 auto; border-radius: 50%; border: 1px solid #d9d9d9; background-color: #ededed; 
+                    font-size: 1.5rem; color: #666; font-weight: 500;
+                }
+                .text{
+                    margin: 10px 0; font-size: 1.25rem; color: #666;
+                }
+                &.active{border-bottom: 5px solid $mainColor;}
+                &.active .num{ background-color: $mainColor; color: #fff; }
+                &.active .text{color: $mainColor;}
+            }
+        }
+    }
+    .btnArea{
+        margin-top: 30px;
+        p{margin-bottom: 10px; color: #666;}
+        button{
+            margin: 0 10px;
+        }
+        .prev{
+            @include joinBtn($bg: #ccc);
+        }
+        .next{
+            @include joinBtn(); 
+        }
+    }
+}
+
+@media screen and (max-width: 1279px){
+    .join{
+        .joinStep{
+            width: 100%;
+            ul{
+                li{
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 420px){
+    .join{
+        .joinStep{
+            ul{
+                li{
+                    .num{
+                        width: 40px; height: 40px;
+                    }
+                }
+            }
+        }
+        .btnArea{
+            .prev{
+                @include joinBtn($pTB: 15px, $pLR: 30px, $bg: #ccc);
+            }
+            .next{
+                @include joinBtn($pTB: 15px, $pLR: 30px); 
+            }
+        }
+    }
+}
+
+@import "agreement";
+@import "input";
+@import "completion";

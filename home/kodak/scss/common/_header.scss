@@ -1,0 +1,234 @@
+@import "var";
+@import "mixin";
+
+.header{
+    position: fixed; top: 0; left: 0; z-index: 100;
+    display: flex; align-items: center;
+    width: 100%; height: 100px;
+
+    &.active{ background-color: $mainColor;}
+
+    .innerWrap{
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .logoGnb, .rightMenu{display: flex; align-items: center;}
+    .panelIcon{display: none;}
+    .basket{display: none;}
+
+    h1{
+        width: 80px; height: 65px;
+        .logo{
+            display: block; width: 100%; height: 100%; background-image: url(../images/common/header_logo.svg); background-repeat: no-repeat; background-position: center; background-size: cover;
+            text-indent: -999em;
+        }
+        .logoText{display: none;}
+    }
+    .gnb{height: 70px;}
+    .gnb > ul{
+        display: flex; align-items: center; height: 100%; text-align: center;
+
+        > li{
+           position: relative; padding: 0 10px;
+        }
+        .mainNav{
+            position: relative;
+            display: block; width: 100px;
+            font-size: 1.25rem; font-weight: 700; line-height: 70px; color: #fff; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+            &::after{
+                content: '';
+                position: absolute; bottom: 10px; left: 0; right: 0; margin: 0 auto; 
+                display: block; width: 0; height: 4px; border-radius: 4px; background-color: $subColor; transition: 0.3s;
+            }
+        }
+        .subNav{
+            display: none;
+            position: absolute; top: 70px; left: 0; 
+            width: 100%; background-color: #fff; border-radius: 10px; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+            line-height: 40px; 
+        }
+    }
+
+    .rightMenu{
+        > ul{
+            display: flex; align-items: center;
+    
+            li{margin: 0 10px;}
+            a{color: #fff;}
+        }
+        fieldset{
+            display: flex; align-items: center; margin-right: 10px; 
+
+            &.active{ width: 210px; background-color: #fff; border-radius: 10px;}
+            &.active button{background-image: url(../images/common/search_icon.active.svg); }
+            &.active input{display: block;}
+            
+            > input{
+                display: none;
+                width: 160px; height: 50px; padding: 0 10px; border: none; border-radius: 10px;
+            }
+            > button{
+                width: 50px; height: 50px; 
+                background-image: url(../images/common/search_icon.svg); background-repeat: no-repeat; background-position: center; border: none; background-color: transparent;
+            }
+        }
+        > a{
+            @include moreBtn(10px, 20px, 10px, $subColor);
+        }
+    }  
+}
+@media screen and (min-width: 1024px){
+    .header{
+        .gnb > ul{
+            > li{
+               &:hover .mainNav::after{width: 100%;}
+            }
+            .subNav{
+                a:hover{color: $mainColor;}
+            }
+        }
+    }
+}
+@media screen and (max-width: 1023px){
+    .header{
+        width: 100%; height: 60px;  min-width: 100%; transition: 0.3s;
+        .logoGnb, .rightMenu{width: 100%; justify-content: space-between;}
+        h1{
+            position: relative; z-index: 110; display: flex; justify-content: center; align-items: center; width: 180px; height: 42px;
+            .logo{
+                width: 30%; background-size: contain;
+            }
+            .logoText{display: block; font-size: 0.5rem; color: #fff; }
+        }
+        .panelIcon{
+            position: relative; z-index: 110;
+            display: block; width: 32px; height: 24px; transition: 0.3s;
+            
+            span{
+                position: absolute; left: 0;
+                display: block;  width: 100%; height: 4px; background-color: #fff; border-radius: 4px;
+                transition: 0.3s;
+
+                &:first-of-type{
+                    top: 0;
+                    animation : bar01 0.75s forwards;
+                }
+                @keyframes bar01 {
+                    0% {
+                        transform : translateY(10px) rotate(45deg);
+                    }
+                    50% {
+                        transform : translateY(10px) rotate(0);
+                    }
+                    100% {
+                        transform : translateY(0) rotate(0);
+                    }
+                }
+                &:nth-of-type(2){
+                    top: 10px;
+                    transition : 0.25s 0.25s;
+                    opacity : 1;
+                }
+                &:last-of-type{
+                    bottom: 0;
+                    animation : bar03 0.75s forwards;
+                }
+                @keyframes bar03 {
+                    0% {
+                        transform : translateY(-10px) rotate(-45deg);
+                    }
+                    50% {
+                        transform : translateY(-10px) rotate(0);
+                    }
+                    100% {
+                        transform : translateY(0) rotate(0);
+                    }
+                }
+            }
+
+            &.active span:first-of-type{
+                animation: active_bar01 0.75s forwards;
+            }
+            @keyframes active_bar01{
+                0% {
+                    transform : translateY(0) rotate(0);
+                }
+                50% {
+                    transform : translateY(10px) rotate(0);
+                }
+                100% {
+                    transform : translateY(10px) rotate(45deg);
+                }
+            }
+
+            &.active span:nth-of-type(2){opacity: 0;}
+            &.active span:last-of-type{
+                animation: active_bar03 0.75s forwards;
+            }
+            @keyframes active_bar03 {
+                0% {
+                    transform : translateY(0) rotate(0);
+                }
+                50% {
+                    transform : translateY(-10px) rotate(0);
+                }
+                100% {
+                    transform : translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
+        
+        .basket{
+            position: relative; z-index: 110;
+            display: block; width: 30px; height: 30px;
+            background-image: url(../images/common/basket.svg); background-repeat: no-repeat; background-position: center; background-size: cover; 
+            text-indent: -999em;
+        }
+
+        .gnb{
+            position: fixed; top: 0; left: -100%;
+            width: 100%; height: 100%; padding-top: 60px; background-color: $mainColor;
+            transition: 0.3s;
+            &.active{left: 0;}
+        }
+        .gnb > ul{
+            flex-direction: column; width: 100%; height: 100%; text-align: left;
+    
+            > li{
+               width: 100%;
+               
+            }
+            .mainNav{
+                width: 100%; color: #fff; text-shadow: none;
+                &::after{
+                    bottom: 10px; left: 0; right: auto;
+                }
+                &.active::after{width: 100%;}
+            }
+            .subNav{
+                position: static; padding: 0 16px; box-shadow: none;
+    
+                a.active{color: $mainColor;}
+            }
+        }
+
+        .rightMenu{
+            position: fixed; bottom: 40px; left: -100%; transition: 0.3s;
+            > ul{
+        
+                li{
+                    &:last-of-type{display: none;}
+                }
+                a{
+                    @include moreBtn(10px, 20px, 10px, #fff, $mainColor);
+                }
+            }
+            fieldset{display: none;}
+            &.active{left: 0; right: 0; margin: 0 auto;}
+
+            > a{
+                margin-right: 16px;
+            }
+        }
+    }
+}

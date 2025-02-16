@@ -1,0 +1,178 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.main{
+    width: 100%; height: 100vh;
+
+    .swiper{
+        position: relative; width: 100%; height: 100%;
+
+        .swiper-slide{
+            video{ width: 100%; height: 100%; object-fit: cover; }
+            figure{
+                width: 100%; height: 100%;
+                img{width: 100%; height: 100%; object-fit: cover;}
+            }
+
+        }
+        .main02 figure figcaption{
+            position: absolute; top: 20%; left: 10%;
+
+
+            h2{
+                font-family: $mainFont; font-weight: 700; font-size: 7.5rem; color: #fff; text-shadow:  -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+                span{font-size: 7.5rem; }
+                .mainColor{color: $mainColor;}
+                .subColor{color: $subColor;}
+            }
+            p{
+                margin: 50px 0;
+                font-family: $mainFont; font-weight: 700; color: #fff; font-size: 3rem; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); line-height: 1.5;
+            }
+            a{
+                @include moreBtn();
+            }
+        }
+        .main03 figure{
+            img{width: 100%; height: 100%; object-fit: fill; }
+            figcaption{
+                position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto; width: 1280px; height: 50%; text-align: center;
+
+                h2{font-family: $mainFont; font-weight: 700; font-size: 5.25rem; color: #fff; text-align: center; text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);}
+                a{
+                    @include moreBtn(); margin-top: 100px;
+                }
+            }
+
+        } 
+
+    }
+    .swiper-pagination-bullet{width: 10px; height: 10px; background-color: #fff; opacity: 1;}
+    .swiper-pagination-bullet-active{width: 25px; border-radius: 20px; background-color: $mainColor;}
+
+    .autoplay-progress{
+        position: absolute; right: 16px; bottom: 16px; z-index: 10;
+        width: 48px; height: 48px;
+        display: flex; align-items: center; justify-content: center; font-weight: bold;
+
+        span{color: #fff;}
+    }
+  
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute; left: 0; top: 0px; z-index: 10;
+      width: 100%; height: 100%;
+      stroke-width: 4px;
+      stroke: $mainColor;
+      fill: none;
+      stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .main{
+        height: 100%;
+        .swiper{
+            .main02 figure figcaption{
+                top: 10%;
+                h2{
+                    font-size: 4rem;
+                    span{font-size: 4rem; }
+                }
+                p{margin: 30px 0; font-size: 1.5rem;}
+            }
+            .main03 figure{
+                figcaption{
+                    width: 100%;
+    
+                    h2{font-size: 4rem;}
+                    a{
+                        margin-top: 50px;
+                    }
+                }
+    
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: 743px){
+    .main{
+        .swiper{
+            .main02 figure figcaption{
+                top: 15%;
+                h2{
+                    font-size: 3rem;
+                    span{font-size: 3rem; }
+                }
+                p{margin: 30px 0; font-size: 1.125rem;}
+            }
+            .main03 figure{
+                figcaption{
+                    h2{font-size: 3rem;}
+                    a{margin-top: 30px;}
+                }
+    
+            } 
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .main{
+        .swiper{
+            .main02 figure figcaption{
+                top: 20%;
+                h2{
+                    font-size: 2rem;
+                    span{font-size: 2rem; }
+                }
+                p{margin: 0 0 10px; font-size: 1rem;}
+                a{
+                    @include moreBtn(10px, 20px, 10px);
+                }
+            }
+            .main03 figure{
+                figcaption{
+                    h2{font-size: 2rem;}
+                    a{
+                        @include moreBtn(10px, 20px, 10px); margin-top: 15px;
+                    }
+                }
+    
+            } 
+        }
+    }
+
+}
+@media screen and (max-width: 320px){
+    .main{
+        .swiper{
+            .main02 figure figcaption{
+                top: 25%;
+                h2{
+                    font-size: 1.5rem;
+                    span{font-size: 1.5rem; }
+                }
+                p{margin: 0 0 10px; font-size: 0.875rem;}
+                a{
+                    @include moreBtn(5px, 10px, 10px);
+                }
+            }
+            .main03 figure{
+                figcaption{
+                    top: 20px;
+                    h2{font-size: 1.5rem;}
+                    a{
+                        @include moreBtn(5px, 10px, 10px); margin-top: 15px;
+                    }
+                }
+    
+            } 
+        }
+    }
+
+}

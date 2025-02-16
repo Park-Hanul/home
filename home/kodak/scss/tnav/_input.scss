@@ -1,0 +1,92 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.join{
+    .joinWrap{
+        table{
+            width: 100%;
+            border-spacing: 0; border-collapse: collapse;
+            border-top: 2px solid $mainColor; border-bottom: 2px solid $mainColor;
+            text-align: left;
+
+            .star{
+                position: relative; top: 1px;
+                font-size: 0.875rem; font-weight: 700; color: #fff;
+            }
+            caption{
+                margin-bottom: 10px; font-size: 0.875rem; text-align: left; color: #666;
+
+                .star{color: $mainColor;}
+            }
+            
+            .star02{ position: relative; top: 1px; color: $subColor; }
+
+            tr:last-of-type{
+                th, td{border: none;}
+            }
+            th, td{ padding: 15px 10px;}
+            th{
+                width: 120px; background-color: $mainColor; border-bottom: 1px solid #fff; 
+                color: #fff; font-weight: 300;
+                label{color: #fff;}
+            }
+            td{
+                border-bottom: 1px solid $mainColor;
+                p{color: $subColor; font-size: 0.875rem; }
+                input{
+                    height: 40px; padding: 0 10px; border: 1px solid #ccc; border-radius: 3px;
+
+                    &::placeholder{font-size: 0.875rem;}
+                    &:focus{outline: none; border: 1px solid $subColor;}
+                }
+                label{font-size: 0.875rem;}
+                &.flexBox{display: flex; align-items: center;}
+                input[type="radio"]{
+                    margin-right: 5px; 
+                    & + label{margin-right: 15px; }
+                }
+                .inputWrap{
+                    display: flex; align-items: center; color: $subColor;
+                    input{margin-right: 3px}
+                }
+                button[type="button"]{
+                    @include button();
+                }
+                .errorMsg{display: none;}
+            }
+            .inputBox02{
+                width: 150px; height: 40px; padding: 0 10px; border: 1px solid #ccc; border-radius: 3px; font-size: 0.875rem;
+                
+                & + label{margin-right: 15px;}
+            }
+            #joinAddr01, #joinAddr02{margin-top: 10px;}
+            .hipen{ margin: 0 5px;}
+        }
+    }
+}
+
+@media screen and (max-width: 743px){
+    .join{
+        .joinWrap{
+            table{
+                th, td{display: block;}
+                th{
+                    width: 100%;
+                }
+                td{
+                    .inputWrap{
+                        flex-wrap: wrap;
+                    }
+                }
+                .inputBox01{
+                    width: 100%;
+                }
+                .inputBox02{
+                    width: 28%;
+                    & + label{margin-right: 0;}
+                }
+                #joinId{width: 70%;}
+            }
+        }
+    }
+}

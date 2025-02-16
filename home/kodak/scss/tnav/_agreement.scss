@@ -1,0 +1,52 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.join{
+    .joinWrap{
+        width: 800px; margin: 0 auto;
+
+        .agreeBox{
+            width: 100%; margin: 30px auto 0; border: 1px solid #999; 
+
+            h3{
+                text-align: left; padding: 20px;
+                @include checkBtn($fs: 1.25rem, $c: #333);
+                #agree01{position: absolute; left: -999em;}
+                #agree02{position: absolute; left: -999em;}
+        
+            }
+            .agreeText{
+                height: 320px; overflow-y: auto; padding: 20px; border-top: 1px solid #999; text-align: left;
+                h4{margin-bottom: 10px; font-size: 1rem;}
+                span{font-size: 0.75rem;}
+                p{margin: 10px 0; font-size: 0.75rem; line-height: 1.5;}
+            }
+        }
+        .allCheck{
+            margin: 30px 0;
+            @include checkBtn( $c: #333);
+            #allchk{position: absolute; left: -999em;}
+        }
+        
+
+    }
+
+}
+
+@media screen and (max-width: 1023px){
+    .join{
+        .joinWrap{
+            width: 100%;
+    
+            .agreeBox{
+                h3{
+                    padding: 10px;
+                }
+                .agreeText{
+                    height: 200px;
+                }
+            }
+        }
+    
+    }
+}

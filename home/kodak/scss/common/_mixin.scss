@@ -1,0 +1,73 @@
+//moreBtn
+@mixin moreBtn($pTB: 15px, $pLR: 50px, $bR: 20px, $bg: $mainColor, $text: #fff){
+    display: inline-block; padding: $pTB $pLR;
+    background-color: $bg; border-radius: $bR;
+    font-size: 1.125rem; font-weight: 700; color: $text; text-align: center;
+}
+
+//section padding
+@mixin sectionPadding($top: 120px, $bottom: 120px){
+    padding: $top 0 $bottom;
+}
+
+//titleh2
+@mixin titleH2($mb: 50px, $fs: 3rem, $c: #333){
+    margin-bottom: $mb;
+    font-weight: 700; font-size: $fs; text-align: center; text-transform: uppercase; color: $c;
+}
+
+@mixin titleH2Effect($mb: 50px, $fs: 3rem){
+    @include titleH2($mb, $fs);
+
+    &.titleEffect{
+        opacity: 0; transform: translateY(-100px);
+        transition: 0.5s ease-out;
+    }
+    &.titleEffect.active{
+        opacity: 1; transform: translateY(0);
+    }
+}
+
+//innovation
+@mixin innovationItem($direction: row, $p: 50px, $w: 49%){
+    width: $w; padding: $p; margin-bottom: 20px; background-color: rgba(#ededed, 0.4);
+    display: flex; justify-content: space-between; align-items: center; flex-direction: $direction;
+}
+
+//product
+@mixin productItem($c: #fff, $top: 20px, $left: 20px){
+    position: relative;
+    img{width: 100%; object-fit: cover;}
+
+    figcaption{
+        position: absolute; top: $top; left: $left; 
+        font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: $c;
+    }
+}
+
+//checkBtn
+@mixin checkBtn($w: 20px, $h: 20px, $fs: 1rem, $c: #999){
+    .check{
+        display: inline-block; position: relative; top: 4px;
+        width: $w; height: $h; margin-right: 5px;
+        border: 1px solid #d9d9d9; border-radius: 10%;             background-image: url(../images/tnav/check_none.svg); background-repeat: no-repeat; background-position: center; background-size: cover;
+    }
+    
+    input:checked + .check{
+        background-color: $mainColor;
+        background-image: url(../images/tnav/check.svg);
+    }
+    span{font-size: $fs; color: $c; font-weight: 500;}
+}
+
+//joinBtn
+@mixin joinBtn( $pTB: 15px, $pLR: 50px, $bR: 20px, $bg: $mainColor, $text: #fff){
+    padding: $pTB  $pLR;
+    background-color: $bg; border-radius: $bR;
+    font-size: 1.125rem; font-weight: 700; color: $text; text-align: center;
+}
+
+@mixin button(){
+    height: 40px; padding: 0 15px; margin-right: 5px; border: none; background-color: $mainColor; border-radius: 3px;
+    color: #fff; font-size: 0.875rem;
+}

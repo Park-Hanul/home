@@ -1,0 +1,71 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.login{
+    width: 580px; margin: 0 auto; border: 3px solid $mainColor; border-radius: 20px; padding: 30px 40px;
+
+    #loginId, #loginPass{
+        display: block; width: 100%; height: 60px; border: 2px solid #d9d9d9; border-radius: 10px; padding: 0 20px; margin: 0 auto 20px;
+
+        &::placeholder{
+            color: #999;
+        }
+    }
+    .pass{
+        margin: 0 auto; position: relative;
+        i{
+            position: absolute; top: 0; bottom: 0; right: 20px; margin: auto 0;
+            display: block; width: 20px; height: 20px;
+            background-image: url(../images/tnav/pass_none.svg); background-repeat: no-repeat; background-position: center;
+
+            &.active{
+                background-image: url(../images/tnav/pass_look.svg);
+            }
+        }
+    }
+    .checkArea{
+        text-align: left;
+        @include checkBtn();
+        #idSave{position: absolute; left: -999em;}
+    }
+    button{
+        width: 100%; background-color: $subColor; border-radius: 10px; border: none; padding: 17px 0; margin: 20px 0;
+        color: #fff; font-size: 1.5rem;
+    }
+
+    .bottomMenu{
+        display: flex; justify-content: center; align-items: center;
+        
+        li{
+            position: relative; padding: 0 20px;
+            a{color: #666;}
+            &::after{
+                content: '|';
+                position: absolute; top: 0; right: 0;
+                font-size: 0.875rem; color: #666;
+            }
+            &:last-of-type::after{display: none;}
+        }
+    }
+    .line{width: 100%; height: 2px; margin: 30px 0; background-color: #d9d9d9;}
+    .simpleLogin{
+        h3{font-size: 1.5rem;}
+        ul{
+            display: flex; justify-content: space-evenly; align-items: center; margin: 20px 0;
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 743px){
+    .login{
+        width: 100%; padding: 30px 20px;
+
+        .bottomMenu{
+            li{
+                padding: 0 10px;
+            }
+        }
+    }
+}

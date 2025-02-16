@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KODAK PHOTOPRINTER</title>
+    <link rel="shortcut icon" href="../images/common/favicon.png">
+    <link rel="apple-touch-icon" href="../images/common/favicon_ios.png">
+    <link rel="icon" href="../images/common/favicon_android.png">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/tnav.css">
+
+    <script src="../js/jquery-3.7.0.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/tnav.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="innerWrap">
+            <div class="logoGnb">
+                <a href="#" class="panelIcon" title="패널열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <h1>
+                    <a href="../index.html" class="logo">kodak로고</a>
+                    <a href="../index.html" class="logoText">KODAK PHOTOPRINTER</a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="../company/greeting.html" class="mainNav">회사소개</a>
+                            <ul class="subNav">
+                                <li><a href="../company/greeting.html">인사말</a></li>
+                                <li><a href="../company/introduction.html">회사소개</a></li>
+                                <li><a href="../company/history.html">연혁</a></li>
+                                <li><a href="../company/brand.html">브랜드소개</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../product/accessory.html" class="mainNav">제품구매</a>
+                            <ul class="subNav">
+                                <li><a href="../product/accessory.html">악세서리패키지</a></li>
+                                <li><a href="../product/camera.html">카메라</a></li>
+                                <li><a href="../product/printer.html">프린터</a></li>
+                                <li><a href="../product/homeprinter.html">홈프린터</a></li>
+                                <li><a href="../product/cartridge.html">카트리지</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../gallery/photo.html" class="mainNav">갤러리</a>
+                            <ul class="subNav">
+                                <li><a href="../gallery/photo.html">포토북</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../community/notice.html" class="mainNav">커뮤니티</a>
+                            <ul class="subNav">
+                                <li><a href="../community/notice.html">공지사항</a></li>
+                                <li><a href="../community/event.html">이벤트</a></li>
+                                <li><a href="../community/review.html">상품후기</a></li>
+                                <li><a href="../community/inquiry.html">1:1문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="necessity basket">장바구니</a>
+            </div>
+            <div class="rightMenu">
+                <ul>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="agreement.html">회원가입</a></li>
+                    <li><a href="#" class="necessity">장바구니</a></li>
+                </ul>
+                <form action="#">
+                    <fieldset>
+                        <legend class="away">검색폼</legend>
+                        <label for="search_box" class="away">검색창</label>
+                        <input type="text" id="search_box" placeholder="검색어를 입력하세요.">
+                        <button type="submit"><span class="away">검색버튼</span></button>
+                    </fieldset>
+                </form>
+                <a href="#" class="necessity">정품등록</a>
+            </div>
+        </div>
+    </header>
+    <section class="formArea">
+        <div class="join">
+            <div class="contentHeader">
+                <h2>회원가입</h2>
+            </div>
+            <div class="joinStep">
+                <ul>
+                    <li>
+                        <span class="num">1</span>
+                        <p class="text">약관동의</p>
+                    </li>
+                    <li class="active">
+                        <span class="num">2</span>
+                        <p class="text">정보입력</p>
+                    </li>
+                    <li>
+                        <span class="num">3</span>
+                        <p class="text">가입완료</p>
+                    </li>
+                </ul>
+            </div>
+            <form action="completion.html" id="joinForm" name="joinForm">
+                <div class="joinWrap">
+                    <table>
+                        <caption>
+                            <span class="star">*</span>
+                            표시는 필수입력 정보입니다.
+                        </caption>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <label for="joinId">아이디</label>
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <div class="inputWrap">
+                                        <input type="text" id="joinId" maxlength="12" class="inputBox01">
+                                        <button type="button">중복검사</button>
+                                        <p>
+                                            <span class="star02">* </span>6~12글자의 대소문자, 숫자만 작성해주세요.
+                                        </p>
+                                    </div>
+                                    <p class="errorMsg" id="idError"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="joinPass">비밀번호</label>
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <input type="password" id="joinPass" maxlength="16" class="inputBox01"><br>
+                                    <p>
+                                        <span class="star02">* </span>비밀번호는 10 ~ 16 자리까지 입니다.
+                                    </p>
+                                    <p>
+                                        <span class="star02">* </span>비밀번호는 대소문자, 숫자, 특수문자가 포함되어야 합니다.
+                                    </p>
+                                    <p class="errorMsg" id="pw01Error"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="joinPassChk">비밀번호확인</label>
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <input type="password" id="joinPassChk" minlength="10" maxlength="16" class="inputBox01">
+                                    <p class="errorMsg" id="pw02Error"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="joinName">이름</label>
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <input type="text" id="joinName" class="inputBox01">
+                                    <p class="errorMsg" id="nameError"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    성별
+                                    <span class="star">*</span>
+                                </th>
+                                <td class="flexBox">
+                                    <input type="radio" name="gender" id="female" checked>
+                                    <label for="female">여성</label>
+                                    <input type="radio" name="gender" id="male">
+                                    <label for="male">남성</label>
+                                    <input type="radio" name="gender" id="none">
+                                    <label for="none">선택안함</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    생년월일
+                                    <span class="star">*</span>
+                                </th>
+                                <td colspan="3">
+                                    <select id="joinYear" class="inputBox02"></select>
+                                    <label for="joinYear">년</label>
+                                    <select id="joinMonth" class="inputBox02"></select>
+                                    <label for="joinMonth">월</label>
+                                    <select id="joinDay" class="inputBox02"></select>
+                                    <label for="joinDay">일</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    주소
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <div class="inputWrap">
+                                        <input type="text" id="joinPost" maxlength="5" class="inputBox02">
+                                        <label for="joinPost" class="away">우편번호입력</label>
+                                        <button type="button">우편번호 검색</button><br>
+                                    </div>
+                                    <input type="text" id="joinAddr01" disabled class="inputBox01">
+                                    <label for="joinAddr01" class="away">주소입력</label>
+                                    <input type="text" id="joinAddr02" class="inputBox01" placeholder="나머지 주소를 입력하세요">
+                                    <label for="joinAddr02" class="away">상세주소입력</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    전화번호
+                                </th>
+                                <td class="number">
+                                    <select id="areaFirst" class="inputBox02">
+                                        <option>02</option>
+                                        <option>031</option>
+                                        <option>032</option>
+                                    </select>
+                                    <label for="areaFirst" class="away">지역번호</label>
+                                    <span class="hipen">-</span>
+                                    <input type="text"  maxlength="4" id="middle" class="inputBox02">
+                                    <label for="middle" class="away">전화번호 가운데</label>
+                                    <span class="hipen">-</span>
+                                    <input type="text" maxlength="4" id="last" class="inputBox02">
+                                    <label for="last" class="away">전화번호 마지막</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    핸드폰
+                                    <span class="star">*</span>
+                                </th>
+                                <td class="number">
+                                    <select id="phonFirst" class="inputBox02">
+                                        <option>010</option>
+                                        <option>011</option>
+                                        <option>017</option>
+                                    </select>
+                                    <label for="phonFirst" class="away">핸드폰처음</label>
+                                    <span class="hipen">-</span>
+                                    <input type="text" maxlength="4" id="phonMiddle" class="inputBox02">
+                                    <label for="phonMiddle" class="away">핸드폰가운데</label>
+                                    <span class="hipen">-</span>
+                                    <input type="text" maxlength="4" id="phonLast" class="inputBox02">
+                                    <label for="phonLast" class="away">핸드폰 마지막</label>
+                                    <p class="errorMsg" id="phonError"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="emailId">이메일</label>
+                                    <span class="star">*</span>
+                                </th>
+                                <td>
+                                    <input type="text" id="emailId" class="inputBox02"  placeholder="이메일 입력">
+                                    <span>@</span>
+                                    <input id="textEmail" class="inputBox02"> 
+                                    <label for="textEmail" class="away">이메일주소</label>
+                                    <select id="email" class="inputBox02">
+                                        <option value="directly" selected>직접 입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                    </select>
+                                    <p class="errorMsg" id="emailError"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    이메일수신
+                                    <span class="star">*</span>
+                                </th>
+                                <td class="flexBox">
+                                    <input type="radio" name="yesno" id="yes" checked>
+                                    <label for="yes">예</label>
+                                    <input type="radio" name="yesno" id="no">
+                                    <label for="no">아니요</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btnArea">
+                        <div class="btnArea">
+                            <button type="reset" onclick="location.href='agreement.html'"  class="prev">이전단계</button>
+                            <button type="submit" class="next">다음단계</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="innerWrap">
+            <div class="footerTop">
+                <div class="cs">
+                    <p>
+                        CS CENTER<br>
+                        <span class="number">070.5213.7814</span>
+                    </p>
+                    <span class="time">
+                        월요일~금요일 / AM 10:00 - PM 05:00<br>
+                        점심시간 PM 12:00 - PM 01:00
+                    </span>
+                </div>
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><img src="../images/common/sns_icon_01.svg" alt="유튜브 아이콘"></a></li>
+                        <li><a href="#"><img src="../images/common/sns_icon_02.svg" alt="인스타그램 아이콘"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                </ul>
+                <div class="info">
+                    <div class="textWrap">
+                        <span>ABOUT KODAK</span><br>
+                        <ul>
+                            <li>상호 : 프리닉스</li>
+                            <li>주식회사대표 : 노광호</li>
+                            <li>사업자등록번호 : 124-86-38688</li>
+                            <li>통신판매업신고번호 : 2016-수원권선-0285 <a href="#">[사업자정보확인]</a></li>
+                            <li>대표번호 : 070-5213-7814</li>
+                            <li>메일 : sales@prinics.com</li>
+                            <li>주소 : 경기도 수원시 권선구 산업로156번길 197-50 프리닉스</li>
+                            <li>개인정보관리자 : 석인보</li>
+                        </ul>
+                    </div>
+                    <h1 class="logo">kodak 로고</h1>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            copyright &copy; kodakphotoprinter.co.kr all rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

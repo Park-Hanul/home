@@ -1,0 +1,506 @@
+.login {
+  width: 580px;
+  margin: 0 auto;
+  border: 3px solid #FFB500;
+  border-radius: 20px;
+  padding: 30px 40px;
+}
+.login #loginId, .login #loginPass {
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin: 0 auto 20px;
+}
+.login #loginId::-moz-placeholder, .login #loginPass::-moz-placeholder {
+  color: #999;
+}
+.login #loginId::placeholder, .login #loginPass::placeholder {
+  color: #999;
+}
+.login .pass {
+  margin: 0 auto;
+  position: relative;
+}
+.login .pass i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/tnav/pass_none.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login .pass i.active {
+  background-image: url(../images/tnav/pass_look.svg);
+}
+.login .checkArea {
+  text-align: left;
+}
+.login .checkArea .check {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10%;
+  background-image: url(../images/tnav/check_none.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.login .checkArea input:checked + .check {
+  background-color: #FFB500;
+  background-image: url(../images/tnav/check.svg);
+}
+.login .checkArea span {
+  font-size: 1rem;
+  color: #999;
+  font-weight: 500;
+}
+.login .checkArea #idSave {
+  position: absolute;
+  left: -999em;
+}
+.login button {
+  width: 100%;
+  background-color: #E4002B;
+  border-radius: 10px;
+  border: none;
+  padding: 17px 0;
+  margin: 20px 0;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.login .bottomMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .bottomMenu li {
+  position: relative;
+  padding: 0 20px;
+}
+.login .bottomMenu li a {
+  color: #666;
+}
+.login .bottomMenu li::after {
+  content: "|";
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+.login .bottomMenu li:last-of-type::after {
+  display: none;
+}
+.login .line {
+  width: 100%;
+  height: 2px;
+  margin: 30px 0;
+  background-color: #d9d9d9;
+}
+.login .simpleLogin h3 {
+  font-size: 1.5rem;
+}
+.login .simpleLogin ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 743px) {
+  .login {
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .login .bottomMenu li {
+    padding: 0 10px;
+  }
+}
+.join .joinStep {
+  width: 1280px;
+  margin: 0 auto 50px;
+  border-bottom: 2px solid #d9d9d9;
+}
+.join .joinStep ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.join .joinStep ul li {
+  width: 20%;
+}
+.join .joinStep ul li .num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  background-color: #ededed;
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 500;
+}
+.join .joinStep ul li .text {
+  margin: 10px 0;
+  font-size: 1.25rem;
+  color: #666;
+}
+.join .joinStep ul li.active {
+  border-bottom: 5px solid #FFB500;
+}
+.join .joinStep ul li.active .num {
+  background-color: #FFB500;
+  color: #fff;
+}
+.join .joinStep ul li.active .text {
+  color: #FFB500;
+}
+.join .btnArea {
+  margin-top: 30px;
+}
+.join .btnArea p {
+  margin-bottom: 10px;
+  color: #666;
+}
+.join .btnArea button {
+  margin: 0 10px;
+}
+.join .btnArea .prev {
+  padding: 15px 50px;
+  background-color: #ccc;
+  border-radius: 20px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.join .btnArea .next {
+  padding: 15px 50px;
+  background-color: #FFB500;
+  border-radius: 20px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 1279px) {
+  .join .joinStep {
+    width: 100%;
+  }
+  .join .joinStep ul li {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .join .joinStep ul li .num {
+    width: 40px;
+    height: 40px;
+  }
+  .join .btnArea .prev {
+    padding: 15px 30px;
+    background-color: #ccc;
+    border-radius: 20px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+  .join .btnArea .next {
+    padding: 15px 30px;
+    background-color: #FFB500;
+    border-radius: 20px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+}
+.join .joinWrap {
+  width: 800px;
+  margin: 0 auto;
+}
+.join .joinWrap .agreeBox {
+  width: 100%;
+  margin: 30px auto 0;
+  border: 1px solid #999;
+}
+.join .joinWrap .agreeBox h3 {
+  text-align: left;
+  padding: 20px;
+}
+.join .joinWrap .agreeBox h3 .check {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10%;
+  background-image: url(../images/tnav/check_none.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.join .joinWrap .agreeBox h3 input:checked + .check {
+  background-color: #FFB500;
+  background-image: url(../images/tnav/check.svg);
+}
+.join .joinWrap .agreeBox h3 span {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+}
+.join .joinWrap .agreeBox h3 #agree01 {
+  position: absolute;
+  left: -999em;
+}
+.join .joinWrap .agreeBox h3 #agree02 {
+  position: absolute;
+  left: -999em;
+}
+.join .joinWrap .agreeBox .agreeText {
+  height: 320px;
+  overflow-y: auto;
+  padding: 20px;
+  border-top: 1px solid #999;
+  text-align: left;
+}
+.join .joinWrap .agreeBox .agreeText h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.join .joinWrap .agreeBox .agreeText span {
+  font-size: 0.75rem;
+}
+.join .joinWrap .agreeBox .agreeText p {
+  margin: 10px 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.join .joinWrap .allCheck {
+  margin: 30px 0;
+}
+.join .joinWrap .allCheck .check {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10%;
+  background-image: url(../images/tnav/check_none.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.join .joinWrap .allCheck input:checked + .check {
+  background-color: #FFB500;
+  background-image: url(../images/tnav/check.svg);
+}
+.join .joinWrap .allCheck span {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+.join .joinWrap .allCheck #allchk {
+  position: absolute;
+  left: -999em;
+}
+
+@media screen and (max-width: 1023px) {
+  .join .joinWrap {
+    width: 100%;
+  }
+  .join .joinWrap .agreeBox h3 {
+    padding: 10px;
+  }
+  .join .joinWrap .agreeBox .agreeText {
+    height: 200px;
+  }
+}
+.join .joinWrap table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 2px solid #FFB500;
+  border-bottom: 2px solid #FFB500;
+  text-align: left;
+}
+.join .joinWrap table .star {
+  position: relative;
+  top: 1px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+}
+.join .joinWrap table caption {
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  text-align: left;
+  color: #666;
+}
+.join .joinWrap table caption .star {
+  color: #FFB500;
+}
+.join .joinWrap table .star02 {
+  position: relative;
+  top: 1px;
+  color: #E4002B;
+}
+.join .joinWrap table tr:last-of-type th, .join .joinWrap table tr:last-of-type td {
+  border: none;
+}
+.join .joinWrap table th, .join .joinWrap table td {
+  padding: 15px 10px;
+}
+.join .joinWrap table th {
+  width: 120px;
+  background-color: #FFB500;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-weight: 300;
+}
+.join .joinWrap table th label {
+  color: #fff;
+}
+.join .joinWrap table td {
+  border-bottom: 1px solid #FFB500;
+}
+.join .joinWrap table td p {
+  color: #E4002B;
+  font-size: 0.875rem;
+}
+.join .joinWrap table td input {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.join .joinWrap table td input::-moz-placeholder {
+  font-size: 0.875rem;
+}
+.join .joinWrap table td input::placeholder {
+  font-size: 0.875rem;
+}
+.join .joinWrap table td input:focus {
+  outline: none;
+  border: 1px solid #E4002B;
+}
+.join .joinWrap table td label {
+  font-size: 0.875rem;
+}
+.join .joinWrap table td.flexBox {
+  display: flex;
+  align-items: center;
+}
+.join .joinWrap table td input[type=radio] {
+  margin-right: 5px;
+}
+.join .joinWrap table td input[type=radio] + label {
+  margin-right: 15px;
+}
+.join .joinWrap table td .inputWrap {
+  display: flex;
+  align-items: center;
+  color: #E4002B;
+}
+.join .joinWrap table td .inputWrap input {
+  margin-right: 3px;
+}
+.join .joinWrap table td button[type=button] {
+  height: 40px;
+  padding: 0 15px;
+  margin-right: 5px;
+  border: none;
+  background-color: #FFB500;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.875rem;
+}
+.join .joinWrap table td .errorMsg {
+  display: none;
+}
+.join .joinWrap table .inputBox02 {
+  width: 150px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.875rem;
+}
+.join .joinWrap table .inputBox02 + label {
+  margin-right: 15px;
+}
+.join .joinWrap table #joinAddr01, .join .joinWrap table #joinAddr02 {
+  margin-top: 10px;
+}
+.join .joinWrap table .hipen {
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 743px) {
+  .join .joinWrap table th, .join .joinWrap table td {
+    display: block;
+  }
+  .join .joinWrap table th {
+    width: 100%;
+  }
+  .join .joinWrap table td .inputWrap {
+    flex-wrap: wrap;
+  }
+  .join .joinWrap table .inputBox01 {
+    width: 100%;
+  }
+  .join .joinWrap table .inputBox02 {
+    width: 28%;
+  }
+  .join .joinWrap table .inputBox02 + label {
+    margin-right: 0;
+  }
+  .join .joinWrap table #joinId {
+    width: 70%;
+  }
+}
+.join .joinWrap .contetnsArea {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  padding: 0 0 30px;
+}
+.join .joinWrap .contetnsArea .bgArea {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 30px;
+  background-image: url(../images/tnav/completion_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.join .joinWrap .contetnsArea figure img {
+  margin: 0 auto;
+}
+.join .joinWrap .contetnsArea figure h3 {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  color: #FFB500;
+}
+.join .joinWrap .contetnsArea figure p {
+  font-size: 1rem;
+}

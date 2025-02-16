@@ -1,0 +1,163 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.event{
+    @include sectionPadding(0);
+    h2{
+        @include titleH2Effect();
+    }
+    
+    .item{
+        position: relative;
+        img{width: 100%; height: 100%; object-fit: cover;}
+        .textWrap{
+            position: absolute;
+            font-family: $mainFont; font-weight: 700;
+        }
+    }
+    .eventItem01{
+        .textWrap{
+            bottom: 20px; right: 40px;
+
+            p{
+                font-size: 5rem; color: #fff;
+
+                .mainColor{font-size: 5rem; color: $mainColor;}
+            }
+        }
+
+    }
+    .eventItem02{
+        .textWrap{
+           top: 30px; left: 0; right: 0; margin: 0 auto; text-align: center;
+            
+            span{font-size: 2.5rem; color: #73B185;}
+
+            .big{margin-top: 20px; font-size: 5rem; color: #045843;}
+            .small{font-size: 3rem; color: #045843;}
+        }
+
+    }
+    .eventItem03{
+        .textWrap{
+           top: 50%; right: 40px; text-align: right; transform: translateY(-50%);
+            
+            span{font-size: 2.5rem;}
+            .subColor{color: $subColor;}
+            p{
+                font-size: 2.5rem;
+                .subColor{font-size: 5rem;}
+            }
+        }
+
+    }
+}
+@media screen and (max-width: 1023px){
+    .event{
+        @include sectionPadding(0, 100px);
+        h2{
+            @include titleH2Effect(30px, 2rem);
+        }
+        
+        .eventItem01{
+            .textWrap{
+                p{
+                    font-size: 3.5rem;
+    
+                    .mainColor{font-size: 3.5rem;}
+                }
+            }
+    
+        }
+        .eventItem02{
+            .textWrap{
+                span{font-size: 2rem;}
+                .big{margin-top: 10px; font-size: 3.5rem;}
+                .small{font-size: 2.5rem;}
+            }
+    
+        }
+        .eventItem03{
+            .textWrap{
+                span{font-size: 2.5rem;}
+                p{
+                    font-size: 2.5rem;
+                    .subColor{font-size: 3.5rem;}
+                }
+            }
+    
+        }
+    }
+}
+@media screen and (max-width: 743px){
+    .event{
+        @include sectionPadding(0, 60px);
+        .eventItem01{
+            .textWrap{
+                p{
+                    font-size: 3rem;
+    
+                    .mainColor{font-size: 3rem;}
+                }
+            }
+    
+        }
+        .eventItem02{
+            .textWrap{
+                span{font-size: 1rem;}
+                .big{margin-top: 0; font-size: 3rem;}
+                .small{font-size: 3rem;}
+            }
+    
+        }
+        .eventItem03{
+            .textWrap{
+                span{font-size: 2rem;}
+                p{
+                    font-size: 2rem;
+                    .subColor{font-size: 3rem;}
+                }
+            }
+    
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .event{
+        .eventItem01{
+            .textWrap{
+                bottom: 10px; right: 10px;
+    
+                p{
+                    font-size: 2rem;
+    
+                    .mainColor{font-size: 2rem;}
+                }
+            }
+    
+        }
+        .eventItem02{
+            .textWrap{
+               top: 10px;
+                
+               span{font-size: 1rem;}
+               .big{font-size: 1.5rem;}
+               .small{font-size: 1.5rem;}
+            }
+    
+        }
+        .eventItem03{
+            .textWrap{
+               top: 50%; right: 20px; text-align: right; transform: translateY(-50%);
+                
+               span{font-size: 1.25rem;}
+               p{
+                   font-size: 1.25rem;
+                   .subColor{font-size: 1.5rem;}
+               }
+            }
+    
+        }
+    }
+}

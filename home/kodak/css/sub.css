@@ -1,0 +1,190 @@
+.header {
+  background-color: #FFB500;
+}
+
+.subMain {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 500px;
+  padding-top: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.subMain.banner01 {
+  background-image: url(../images/sub/sub_main_bg_01.jpg);
+}
+.subMain.banner02 {
+  background-image: url(../images/sub/sub_main_bg_02.jpg);
+}
+.subMain.banner03 {
+  background-image: url(../images/sub/sub_main_bg_03.jpg);
+}
+.subMain.banner04 {
+  background-image: url(../images/sub/sub_main_bg_04.jpg);
+}
+.subMain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.subMain .subTitle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.subMain .subTitle h2 {
+  top: -50px;
+  opacity: 0;
+  animation: subTitle 0.6s ease-in;
+  animation-fill-mode: forwards;
+  font-family: "KorailRoundGothic";
+  font-weight: 700;
+  font-size: 5rem;
+  color: #fff;
+}
+@keyframes subTitle {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.subMain .innerWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+}
+.subMain .innerWrap .indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.subMain .innerWrap .indicator .homeBtn {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #FFB500;
+  border-radius: 50%;
+  background-image: url(../images/sub/home_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.subMain .innerWrap .indicator .arrow {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-image: url(../images/sub/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.subMain .innerWrap .indicator .mainList, .subMain .innerWrap .indicator .subList {
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  border-bottom: 1px solid #fff;
+}
+.subMain .innerWrap .indicator .mainList button, .subMain .innerWrap .indicator .subList button {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+.subMain .innerWrap .indicator .mainList button .text, .subMain .innerWrap .indicator .subList button .text {
+  color: #fff;
+  font-size: 0.875rem;
+}
+.subMain .innerWrap .indicator .mainList button::after, .subMain .innerWrap .indicator .subList button::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-image: url(../images/sub/sub_nav_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.subMain .innerWrap .indicator .mainList button.active::after, .subMain .innerWrap .indicator .subList button.active::after {
+  transform: rotate(180deg);
+}
+.subMain .innerWrap .indicator .mainList ul, .subMain .innerWrap .indicator .subList ul {
+  display: none;
+  padding: 0 10px;
+  background-color: #ededed;
+}
+.subMain .innerWrap .indicator .mainList ul li a, .subMain .innerWrap .indicator .subList ul li a {
+  line-height: 30px;
+  font-size: 0.875rem;
+}
+
+.formArea {
+  width: 100%;
+  text-align: center;
+  padding: 200px 0 120px;
+}
+.formArea h2 {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.subContents {
+  width: 100%;
+  text-align: center;
+  padding: 120px 0;
+}
+.subContents .titleArea {
+  padding: 0 0 50px;
+}
+.subContents .titleArea h2 {
+  position: relative;
+  height: 100px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFB500;
+}
+.subContents .titleArea h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1px;
+  height: 20px;
+  background-color: #FFB500;
+}
+
+@media screen and (max-width: 1023px) {
+  .subMain .innerWrap .indicator {
+    left: 16px;
+  }
+  .formArea {
+    padding: 120px 16px 120px;
+  }
+  .subContents {
+    padding: 120px 16px;
+  }
+}

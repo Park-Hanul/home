@@ -1,0 +1,19 @@
+@import "../common/var";
+@import "../common/mixin";
+
+.join{
+    .joinWrap{
+        .contetnsArea{
+            width: 100%; border: 1px solid #d9d9d9; padding: 0 0 30px;
+            .bgArea{
+                width: 100%; height: 150px; margin-bottom: 30px;
+                background-image: url(../images/tnav/completion_bg.jpg); background-repeat: no-repeat; background-position: top center; background-size: cover;
+            }
+            figure{
+                img{margin: 0 auto;}
+                h3{margin: 20px 0; font-size: 1.5rem; color: $mainColor;}
+                p{font-size: 1rem;}
+            }
+        }
+    }
+}
